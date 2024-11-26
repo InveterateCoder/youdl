@@ -102,9 +102,14 @@ class YouDl(tk.Frame):
         self.print_to_console(
             "Command: " + " ".join(shlex.quote(arg) for arg in command) + os.linesep
         )
+        wless = subprocess.CREATE_NO_WINDOW
         try:
             process = subprocess.Popen(
-                command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                creationflags=wless,
             )
 
             v_list, a_list = [], []
