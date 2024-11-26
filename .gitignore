@@ -1,3 +1,6 @@
 .venv
+dist
+build
+youdl.spec
 ffmpeg.exe
 yt-dlp.exe
